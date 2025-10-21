@@ -1,0 +1,36 @@
+:root {
+  --nav-height: 64px; /* set once, reuse */
+}
+
+/* fixed navbar */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: white;        /* choose solid bg so content doesn't show through */
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 2px 9px rgba(0,0,0,0.08);
+  z-index: 1000;            /* be above other content */
+}
+
+/* inner container for centered content */
+.nav-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* links */
+.links a { margin-left: 16px; text-decoration: none; color: #111; }
+
+/* IMPORTANT: push page content down so it's not hidden under the fixed nav */
+.page-content {
+  padding-top: var(--nav-height);
+}
